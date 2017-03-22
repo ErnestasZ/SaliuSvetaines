@@ -12,7 +12,9 @@ class Category < ApplicationRecord
       end
     end
 
-    Category.create! [name: selected_rows[1][4], date_issue: selected_rows[1][4].scan(/\d+/).first(3).join(' ')]
+    Category.create! [name: selected_rows[1][4], 
+                      date_issue: selected_rows[1][4].scan(/\d+/).first(3).join(' '), 
+                      release_date: (selected_rows[1][4].scan(/\d+/).first(3).join('-')).to_date]
     
     selected_rows.each do |row|
       arr = []
@@ -25,6 +27,10 @@ class Category < ApplicationRecord
                                     stamp_year: arr[11]]
     end
 
+  end
+
+  def all_years
+    @years = Category.select(:release_date)
   end
 
 end

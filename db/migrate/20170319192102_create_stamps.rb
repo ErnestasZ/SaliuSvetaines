@@ -14,6 +14,7 @@ class CreateStamps < ActiveRecord::Migration[5.0]
       t.string :stamp_group3
       t.string :stamp_year
       t.references :category, foreign_key: true
+      t.timestamps
     end
   end
 end
