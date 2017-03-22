@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  _type: MyString
+  _category: MyString
+  image: MyString
+  name: MyString
+  short_description: MyString
+  stamperija_code: MyString
+  stamp_continent: MyString
+  stamp_country: MyString
+  stamp_group: MyString
+  stamp_group1: MyString
+  stamp_group2: MyString
+  stamp_group3: MyString
+  stamp_product_type: MyString
+  stamp_year: MyString
+
+two:
+  _type: MyString
+  _category: MyString
+  image: MyString
+  name: MyString
+  short_description: MyString
+  stamperija_code: MyString
+  stamp_continent: MyString
+  stamp_country: MyString
+  stamp_group: MyString
+  stamp_group1: MyString
+  stamp_group2: MyString
+  stamp_group3: MyString
+  stamp_product_type: MyString
+  stamp_year: MyString
