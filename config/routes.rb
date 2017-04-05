@@ -17,6 +17,5 @@ Rails.application.routes.draw do
 
   get "/category/:id/stamps", to: "pages#stamps", as: 'stamps'
 
-  get "/category/:id/stamps", to: "pages#stamps", as: 'stamps'
 
 end

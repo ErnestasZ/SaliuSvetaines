@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170405162635) do
 
-ActiveRecord::Schema.define(version: 20170403173611) do
-
-ActiveRecord::Schema.define(version: 20170403173611) do
-
-
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "date_issue"
@@ -45,11 +40,7 @@ ActiveRecord::Schema.define(version: 20170403173611) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-
     t.string   "image_name"
-
-    t.string   "image_name"
-
     t.index ["category_id"], name: "index_stamps_on_category_id"
   end
 
