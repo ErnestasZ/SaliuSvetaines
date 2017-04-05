@@ -1,9 +1,20 @@
 class PagesController < ApplicationController
   def index
+    @categories = Category.order('release_date DESC, created_at DESC')
+    @stamps = Stamp.all
+    year = []
+    @categories.each do |category|
+      year << category.release_date.year
+    end
+    @years = year.uniq
   end
 
   def categories
 
+  end
+
+  def stamps
+    @category = Category.find(params[:id])
   end
 
   def import_csv_stamperija

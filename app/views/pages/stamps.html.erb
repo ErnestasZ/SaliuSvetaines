@@ -1,0 +1,39 @@
+<section id="categoty-date" class="text-date">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <p><%= @category.release_date.strftime("%F") %></p>
+    </div>
+  </div>
+</section>
+
+<hr class="half-rule"/>
+
+<section id="categoty-intro" class="text-intro">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3> ISSUE OF <%= @category.stamps.first.stamp_country %> POSTAGE STAMPS <%= @category.date_issue %></h3>
+        <p>Philatelic agency Stamperija Ltd. – the authorized representative of Niger post administration (the issues of 2013-2017). We offer various interesting topical stamps and continuously update the assortment with new stamps that artistically depict the most important events and personalities of all times.</p>
+      </div>
+    </div>
+</section>
+
+<hr class="half-rule"/>
+
+<hr class="half-rule"/>
+
+<section id="categoty-intro" class="text-intro">
+  <% @category.stamps.each do |stamp| %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4">
+            <div class="thumbnail thumb-stamps">
+            <%= image_tag stamp.image_name, class: "image-stamps" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="half-rule"/>
+  <% end %>
+</section>

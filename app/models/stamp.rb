@@ -4,7 +4,6 @@ class Stamp < ApplicationRecord
 
   belongs_to :category
 
-  
 
   # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
@@ -15,6 +14,15 @@ class Stamp < ApplicationRecord
   def picture_from_url
     self.avatar = open("http://stamperija.eu/media/catalog/product/cache/1/image/940x500/17f82f742ffe127f42dca9de82fb58b1/N/I/NIG16601a_1.jpg").read
     self.save
+  end
+
+  def pictures_from_url(url)
+    name = "#{self.stamperija_code}.#{self.image.split('.').last}"
+    open("app/assets/images/#{name}", 'wb') do |file|
+      file << open(url).read
+      self.update(image_name: name)
+    end
+
   end
 
 

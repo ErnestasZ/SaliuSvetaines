@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170405162635) do
+=======
+ActiveRecord::Schema.define(version: 20170403173611) do
+>>>>>>> f5a8616826b820edfd7aa69f322007a3be8590f1
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +44,10 @@ ActiveRecord::Schema.define(version: 20170405162635) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+<<<<<<< HEAD
+=======
+    t.string   "image_name"
+>>>>>>> f5a8616826b820edfd7aa69f322007a3be8590f1
     t.index ["category_id"], name: "index_stamps_on_category_id"
   end
 

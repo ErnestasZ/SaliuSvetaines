@@ -19,6 +19,7 @@ gem "font-awesome-rails"
 gem 'simple-line-icons-rails'
 gem "pry"
 gem "pry-nav"
+gem "paperclip", "~> 5.0.0"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
