@@ -1,8 +1,13 @@
 require "open-uri"
 
+
+# require 'fileutils'
+
+
 class Stamp < ApplicationRecord
 
   belongs_to :category
+
 
 
   # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
@@ -16,6 +21,9 @@ class Stamp < ApplicationRecord
     self.save
   end
 
+
+  
+
   def pictures_from_url(url)
     name = "#{self.stamperija_code}.#{self.image.split('.').last}"
     open("app/assets/images/#{name}", 'wb') do |file|
@@ -24,6 +32,7 @@ class Stamp < ApplicationRecord
     end
 
   end
+
 
 
 end

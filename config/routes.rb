@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   get "/categories", to: "pages#categories", as: 'categories'
   post "/categories", to: "pages#import_csv_stamperija", as: 'import_csv_stamperija'
 
+
   get "stamp", to: "pages#stamp"
+
+  get "/category/:id/stamps", to: "pages#stamps", as: 'stamps'
 
   get "/category/:id/stamps", to: "pages#stamps", as: 'stamps'
 
