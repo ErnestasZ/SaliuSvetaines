@@ -24,65 +24,47 @@
     </div>
 </section>
 
-<hr class="half-rule"/>
 
 <section id="body" class="pinterest-body">
+
+<% @years.each do |year| %>
+
+  <hr class="half-rule"/>
   <div class="container">
     <div class="row">
+
       <div class="col-md-1">
-        <h3 class="stamps-years">2017</h3>
+        <h3 class="stamps-years"><%= year %></h3>
       </div>
+
       <div class="col-md-10">
         <div class="row">
-          <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="thumbnail thumb-box">
-              <%= image_tag "1.jpg", class: "image-body" %>
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-                <p><a href="#" class="btn btn-primary" role="button">View</a> 
-              </div>
-            </div>
-          </div>
 
-          <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="thumbnail thumb-box">
-              <%= image_tag "http://stamperija.eu/media/catalog/product/cache/1/image/940x500/17f82f742ffe127f42dca9de82fb58b1/C/A/CA17001a.jpg", class: "image-body" %>
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
-          </div>
+          <% @categories.each do |category| %>
+            <% if year == category.release_date.year %>
 
-          <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="thumbnail">
-              <img src="..." alt="...">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              <div class="col-xs-6 col-sm-4 col-md-3">
+                <div class="thumbnail thumb-box">
+                  <%= image_tag category.stamps.first.image_name, class: "image-body" %>
+                  <div class="caption">
+                    <h5><%= category.stamps.first.stamp_country %></h5>
+                    <p><%= category.date_issue %></p>
+                    <p><%=link_to("View", stamps_path(category), class: "btn btn-primary", role: "button" ) %>
+                    <!-- <a href="#" class="btn btn-primary" role="button">View</a>  -->
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="thumbnail">
-              <img src="..." alt="...">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>...</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
-          </div>
+            <% end %>
+          <% end %>
+
         </div>
-        
       </div>
 
     </div>
   </div>
+    
+<% end %>
     
 </section>
 
