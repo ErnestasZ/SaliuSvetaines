@@ -21,4 +21,8 @@ class PagesController < ApplicationController
     Category.import_csv_stamperija(params[:file])
     redirect_to categories_path
   end
+
+  def stamp
+    @stamp = Stamp.first.picture_from_url
+  end
 end

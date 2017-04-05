@@ -53,7 +53,13 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
+        <li>
+          <% if logged_in? %>
+            <%= link_to 'Logout', logout_path, class: 'btn btn-default' %>     
+          <% end %>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+
 </nav>
