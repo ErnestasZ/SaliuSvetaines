@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 center-block">
+
+      <div class="panel-heading">
+        <div class="panel-title text-center">
+        <h1 class="title">Susisiekite</h1>
+          <hr />
+        </div>
+      </div> 
+      <h3>Turite klausimų ar pasiūlymų? Iškilo problemų? Susisiekite su mumis:</h3>
+
+      <%= form_tag do %>
+
+      <div class="form-group">
+        <label for="name" class="cols-sm-2 control-label">Jūsų vardas</label>
+        <div class="">
+          <%= text_field_tag(:name, nil, placeholder: "Vardas", class: "form-control") %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="cols-sm-2 control-label">Jūsų el. paštas</label>
+        <div class="">
+          <%= email_field_tag(:email, nil, placeholder: "El. paštas", class: "form-control") %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="cols-sm-2 control-label">Laiško tema</label>
+        <div class="">
+          <%= text_field_tag(:subject, nil, placeholder: "Tema", class: "form-control") %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="cols-sm-2 control-label">Žinutės tekstas</label>
+        <div class="">
+          <%= text_area_tag(:text, nil, placeholder: "Įveskite tekstą", class: "form-control") %>
+        </div>
+      </div>
+
+      <%= raw recaptcha_tags %>
+
+      <div class="actions">
+        <%= submit_tag "Siųsti", class: "btn btn-success btn-lg btn-block login-button" %>
+      </div>
+      
+      <% end %>
+
+
+ 
+    </div>
+  </div>
+</div>

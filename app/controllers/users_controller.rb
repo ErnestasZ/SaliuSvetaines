@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :is_admin?, only: [:new, :show]
+  before_action :is_admin?, only: [:new, :show, :edit, :destroy]
   def new
     @user = User.new
   end
@@ -15,6 +15,19 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(allowed_params)
+  end
+
+  def destroy
+    @user = User.where(id: params[:id])
   end
 
   private

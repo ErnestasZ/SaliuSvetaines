@@ -17,5 +17,8 @@ Rails.application.routes.draw do
 
   get "/category/:id/stamps", to: "pages#stamps", as: 'stamps'
 
+  get "/contact_us", to: "contact#index"
+  post '/contact_us', to: 'contact#new_mail'
+
 
 end
